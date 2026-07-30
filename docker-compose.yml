@@ -1,0 +1,33 @@
+services:
+  angular:
+    build: .
+    container_name: angular-docker-compose
+
+    ports:
+      - "4200:4200"
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    command: npm start -- --host 0.0.0.0
+
+  postgres:
+    image: postgres:17
+    container_name:  employee-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: employee_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
