@@ -1,59 +1,206 @@
-# AngularDockerCompose
+# Portfolio Full Stack
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.5.
+A full-stack personal portfolio application developed to demonstrate practical skills in modern web development.
 
-## Development server
+The project is being built progressively using **Angular**, **Spring Boot**, **PostgreSQL**, **REST API**, and **Docker**, following a real-world application architecture.
 
-To start a local development server, run:
+## 🚀 Technologies
 
-```bash
-ng serve
+### Frontend
+
+* Angular
+* TypeScript
+* HTML5
+* CSS3
+* Angular Components
+* Angular Services
+* HTTP Client
+* REST API integration
+
+### Backend
+
+* Java
+* Spring Boot
+* Spring Web
+* Spring Data JPA
+* Hibernate
+* REST API
+* Maven
+
+### Database
+
+* PostgreSQL
+* JPA/Hibernate ORM
+
+### Tools
+
+* Git & GitHub
+* Postman
+* Docker
+* Visual Studio Code / Spring Tool Suite
+
+---
+
+## 🎨 Angular Frontend
+
+The frontend is being developed with Angular using a component-based architecture.
+
+The application includes the main sections of a professional portfolio:
+
+* Home
+* About
+* Skills
+* Projects
+* Contact
+
+Angular is responsible for the user interface and will communicate with the Spring Boot backend through HTTP requests.
+
+The project uses Angular components and services to organize the application and prepare it for integration with the REST API.
+
+### Frontend Architecture
+
+```text
+Angular
+│
+├── Components
+│   ├── Home
+│   ├── About
+│   ├── Skills
+│   ├── Projects
+│   └── Contact
+│
+├── Services
+│   └── ProjectService
+│
+└── REST API
+        │
+        ▼
+   Spring Boot
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ☕ Spring Boot Backend
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The backend was developed using **Java and Spring Boot**.
 
-```bash
-ng generate component component-name
+The application exposes a REST API responsible for managing portfolio projects.
+
+### Projects API
+
+| Method | Endpoint             | Description       |
+| ------ | -------------------- | ----------------- |
+| GET    | `/api/projects`      | List all projects |
+| POST   | `/api/projects`      | Create a project  |
+| PUT    | `/api/projects/{id}` | Update a project  |
+| DELETE | `/api/projects/{id}` | Delete a project  |
+
+### Project Entity
+
+Each project contains:
+
+```text
+Project
+├── id
+├── name
+└── description
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The `id` is automatically generated using JPA.
 
-```bash
-ng generate --help
+---
+
+## 🗄️ PostgreSQL
+
+The backend uses PostgreSQL as the relational database.
+
+Spring Data JPA and Hibernate are responsible for mapping the Java `Project` entity to the PostgreSQL database.
+
+```text
+Spring Boot
+     │
+     ▼
+Spring Data JPA
+     │
+     ▼
+Hibernate
+     │
+     ▼
+PostgreSQL
 ```
 
-## Building
+---
 
-To build the project run:
+## 🔄 Full Stack Architecture
 
-```bash
-ng build
+The current architecture is:
+
+```text
+┌─────────────────────┐
+│       Angular       │
+│      Frontend       │
+└──────────┬──────────┘
+           │
+           │ HTTP / REST
+           ▼
+┌─────────────────────┐
+│    Spring Boot      │
+│       Backend       │
+└──────────┬──────────┘
+           │
+           │ JPA / Hibernate
+           ▼
+┌─────────────────────┐
+│     PostgreSQL       │
+│      Database        │
+└─────────────────────┘
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## ✅ Current Progress
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Backend
 
-```bash
-ng test
-```
+* [x] Spring Boot project
+* [x] PostgreSQL connection
+* [x] Project entity
+* [x] Repository
+* [x] REST Controller
+* [x] GET projects
+* [x] POST project
+* [x] PUT project
+* [x] DELETE project
+* [x] CRUD testing with Postman
 
-## Running end-to-end tests
+### Frontend
 
-For end-to-end (e2e) testing, run:
+* [x] Angular project
+* [x] Portfolio components
+* [x] Project model
+* [x] Project service foundation
+* [ ] Connect Angular to Spring Boot REST API
+* [ ] Display projects from PostgreSQL
+* [ ] Create projects from Angular
+* [ ] Edit projects from Angular
+* [ ] Delete projects from Angular
 
-```bash
-ng e2e
-```
+### Future Development
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+* [ ] Authentication
+* [ ] JWT
+* [ ] Admin dashboard
+* [ ] Responsive design improvements
+* [ ] Docker Compose
+* [ ] Cloud deployment
+* [ ] Production configuration
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🎯 Project Goal
+
+The goal of this project is to build a professional full-stack portfolio while demonstrating practical experience with:
+
+**Java • Spring Boot • Angular • TypeScript • PostgreSQL • REST APIs • JPA • Hibernate • Docker • Git • GitHub**
+
+The application is being developed incrementally, with each stage introducing new technologies and real-world software development practices.
